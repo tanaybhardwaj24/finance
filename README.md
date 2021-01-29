@@ -6,4 +6,4 @@ A place to "sell" and "buy" stocks. Made using flask and managed using sqlite
 
 ### Identified Bugs
 
-####### build redirects person to login page everytime they try to do something
+###### build redirects person to login page everytime they try to do something
