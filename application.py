@@ -1,5 +1,4 @@
 import os
-
 from cs50 import SQL
 from flask import Flask, flash, jsonify, redirect, render_template, request, session
 from flask_session import Session
@@ -33,7 +32,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Configure CS50 Library to use SQLite database
-db = SQL("sqlite:///finance.db")
+db = SQL(os.getenv("postgres://yimyundjhmmjvq:f28602f351dacb39632021cdbb89427650245c4ce175bea158bf14831eecec51@ec2-3-220-193-133.compute-1.amazonaws.com:5432/d7jfd61o6vfih6"))
 
 # Make sure API key is set
 if not os.environ.get("API_KEY"):
@@ -137,7 +136,7 @@ def history():
 
         # create a list with all the info about the transaction and append it to a list of every stock transaction
         transactions.append(list((stock_info['symbol'], stock_info['name'], row['amount'], row['value'], row['date'])))
-    
+
     # redirect user to index page
     return render_template("history.html", transactions=transactions)
 
