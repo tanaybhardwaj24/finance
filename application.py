@@ -35,8 +35,8 @@ db = SQL("sqlite:///finance.db")
 #db = SQL(os.getenv("postgres://yimyundjhmmjvq:f28602f351dacb39632021cdbb89427650245c4ce175bea158bf14831eecec51@ec2-3-220-193-133.compute-1.amazonaws.com:5432/d7jfd61o6vfih6"))
 
 # Make sure API key is set
-if not os.environ.get("API_KEY"):
-    raise RuntimeError("API_KEY not set")
+#if not os.environ.get("API_KEY"):
+    #raise RuntimeError("API_KEY not set")
 
 
 @app.route("/")
