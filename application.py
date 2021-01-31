@@ -31,7 +31,7 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
-db = SQL("sqlite:///finance.db")
+db = SQL(os.getenv("postgres://swopxaqjihykqf:0c8e81b238a81ff3b7e9fe82b9768a07b7fc585772445a6da5d4e992d9188b54@ec2-3-228-114-251.compute-1.amazonaws.com:5432/dr748d7id76k1"))
 
 # Make sure API key is set
 #if not os.environ.get("API_KEY"):
